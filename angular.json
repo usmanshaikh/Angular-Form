@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "AnalyticsFox": {
+    "AngularForm": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/AnalyticsFox",
+            "outputPath": "dist/AngularForm",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -59,18 +59,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "AnalyticsFox:build"
+            "browserTarget": "AngularForm:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "AnalyticsFox:build:production"
+              "browserTarget": "AngularForm:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "AnalyticsFox:build"
+            "browserTarget": "AngularForm:build"
           }
         },
         "test": {
@@ -104,7 +104,7 @@
         }
       }
     },
-    "AnalyticsFox-e2e": {
+    "AngularForm-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -113,11 +113,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "AnalyticsFox:serve"
+            "devServerTarget": "AngularForm:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "AnalyticsFox:serve:production"
+              "devServerTarget": "AngularForm:serve:production"
             }
           }
         },
@@ -133,5 +133,5 @@
       }
     }
   },
-  "defaultProject": "AnalyticsFox"
+  "defaultProject": "AngularForm"
 }
