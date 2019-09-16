@@ -1,5 +1,10 @@
 # Angular Form
 
+Angular provide Two types of Form.
+So I used both types of form Template Driven Form & Reactive Form and created simple contact form and also added with Validation to the Form.
+![alt form](form.jpg)
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
 ## Development server
