@@ -1,0 +1,105 @@
+<header-component></header-component>
+<div class="container">
+  <div class="templateform--page--wrapper">
+    <div class="form--container">
+      <span class="back" [routerLink]="['/']">Back</span>
+      <h1 class="heading">Reactive Form</h1>
+      <div class="form--wrapper">
+        <form [formGroup]="rtfForm" (ngSubmit)="onSubmit(rtfForm)">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="f--label">First Name</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  class="form-control f--input"
+                  [ngClass]="{
+                    'f--error': isSubmitted && formControls.firstName.invalid
+                  }"
+                  formControlName="firstName"
+                />
+                <label
+                  class="error"
+                  *ngIf="isSubmitted && formControls.firstName.invalid"
+                >
+                  First Name is required
+                </label>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="f--label">Last Name</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  class="form-control f--input"
+                  [ngClass]="{
+                    'f--error': isSubmitted && formControls.lastName.invalid
+                  }"
+                  formControlName="lastName"
+                />
+                <label
+                  class="error"
+                  *ngIf="isSubmitted && formControls.lastName.invalid"
+                >
+                  Last Name is required
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="f--label">Phone Number</label>
+                <input
+                  type="text"
+                  name="phone"
+                  class="form-control f--input"
+                  [ngClass]="{
+                    'f--error': isSubmitted && formControls.phone.invalid
+                  }"
+                  formControlName="phone"
+                  minlength="10"
+                  maxlength="10"
+                />
+                <label
+                  class="error"
+                  *ngIf="isSubmitted && formControls.phone.invalid"
+                >
+                  Phone Number is required with 10 digit number
+                </label>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="f--label">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control f--input"
+                  [ngClass]="{
+                    'f--error': isSubmitted && formControls.email.invalid
+                  }"
+                  formControlName="email"
+                />
+                <label
+                  class="error"
+                  *ngIf="isSubmitted && formControls.email.invalid"
+                >
+                  Email is required & must be a valid email address
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <button type="submit" class="btn submit--btn">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <form-data-component [userData]="userData" *ngIf="showData"></form-data-component>
+    </div>
+  </div>
+</div>

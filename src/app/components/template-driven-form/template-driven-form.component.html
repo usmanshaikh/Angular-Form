@@ -1,0 +1,108 @@
+<header-component></header-component>
+<div class="container">
+  <div class="templateform--page--wrapper">
+    <div class="form--container">
+      <span class="back" [routerLink]="['/']">Back</span>
+      <h1 class="heading">Template Driven Form</h1>
+      <div class="form--wrapper">
+        <form #tdfForm="ngForm" (ngSubmit)="tdfForm.form.valid && onSubmit()">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="f--label">First Name</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  class="form-control f--input"
+                  [ngClass]="{
+                    'f--error': tdfForm.submitted && firstName.invalid
+                  }"
+                  ngModel
+                  required
+                  firstName
+                  #firstName="ngModel"
+                />
+                <label
+                  class="error"
+                  *ngIf="tdfForm.submitted && firstName.invalid"
+                >
+                  First Name is required
+                </label>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="f--label">Last Name</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  class="form-control f--input"
+                  [ngClass]="{
+                    'f--error': tdfForm.submitted && lastName.invalid
+                  }"
+                  ngModel
+                  required
+                  lastName
+                  #lastName="ngModel"
+                />
+                <label
+                  class="error"
+                  *ngIf="tdfForm.submitted && lastName.invalid"
+                >
+                  Last Name is required
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="f--label">Phone Number</label>
+                <input
+                  type="text"
+                  name="phone"
+                  class="form-control f--input"
+                  [ngClass]="{ 'f--error': tdfForm.submitted && phone.invalid }"
+                  ngModel
+                  required
+                  phone
+                  minlength="10"
+                  maxlength="10"
+                  #phone="ngModel"
+                  pattern="[0-9]+"
+                />
+                <label class="error" *ngIf="tdfForm.submitted && phone.invalid">
+                  Phone Number is required with 10 digit number
+                </label>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label class="f--label">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control f--input"
+                  [ngClass]="{ 'f--error': tdfForm.submitted && email.invalid }"
+                  ngModel
+                  required
+                  email
+                  #email="ngModel"
+                />
+                <label class="error" *ngIf="tdfForm.submitted && email.invalid">
+                  Email is required & must be a valid email address
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <button type="submit" class="btn submit--btn">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <form-data-component [userData]="userData" *ngIf="showData"></form-data-component>
+    </div>
+  </div>
+</div>
