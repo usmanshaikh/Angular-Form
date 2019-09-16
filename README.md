@@ -16,6 +16,10 @@ And also added Validation.
 
 ![alt form](form3.jpg)
 
+![alt form](form4.jpg)
+
+![alt form](form5.jpg)
+
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
